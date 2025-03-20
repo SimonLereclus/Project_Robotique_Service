@@ -1,16 +1,16 @@
 # CE PROJET EN RESUME
 ### Fait par Simon LERECLUS et Florian BEAUVAIS
 
-Le projet à besoin d'une installation ROS Jazzy fonctionelle
+Le projet à besoin d'une installation ROS Jazzy fonctionnelle
 
 # INSTALL INSTRUCTIONS
 
-créee un nouveau workspace ros2_ws si non existant.
+créée un nouveau workspace ros2_ws si non existant.
 
 `cd ros2_ws/src
 git clone git@github.com:SimonLereclus/Project_Robotique_Service.git`
 
-Le dossier devrais se trouvé à ros2_ws/src/tiago_pick_and_place après le clone
+Le dossier devrait se trouver à ros2_ws/src/tiago_pick_and_place après le clone
 
 Déplace le fichier `pick_and_place.world` dans `~/ros2_ws/src/br2_gazebo_worlds/worlds`
 
@@ -27,7 +27,7 @@ source ~/.bashrc`
 ## ETAPE 2
 
 `ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/key_vel`
-### Pour pouvoir se déplacé vers le cube manuscrit
+### Pour pouvoir se déplacer vers le cube manuscrit
 
 ## ETAPE 3
 
@@ -35,7 +35,7 @@ source ~/.bashrc`
 
 # REFERENCES ET BIBLIOGRAPHIE
 
-le projet et basé sur les sources suivantes :
+le projet est basé sur les sources suivantes :
 
 ROS JAZZY : https://gitlab.com/f2m2robserv/jazzy-ros-ynov/
 

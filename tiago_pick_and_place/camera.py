@@ -28,7 +28,7 @@ class CameraManegement(Node):
 
             # Display the image using OpenCV
             #cv2.imshow("Camera Image", cv_image)
-            cv2.waitKey(1)
+            #cv2.waitKey(1)
         
         except Exception as e:
             self.get_logger().error(f"Error converting image: {e}")
@@ -36,9 +36,11 @@ class CameraManegement(Node):
     def detect_and_draw_square(self, image):
         # Convert the image to grayscale
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        cv2.imshow("Gray", gray)
 
         # Apply GaussianBlur to reduce noise
         blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+        cv2.imshow("Blur", blurred)
 
         # Use Canny edge detection
         edges = cv2.Canny(blurred, 50, 150)

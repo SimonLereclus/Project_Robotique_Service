@@ -12,6 +12,8 @@ git clone git@github.com:SimonLereclus/Project_Robotique_Service.git`
 
 Le dossier devrais se trouvé à ros2_ws/src/tiago_pick_and_place après le clone
 
+Déplace le fichier `pick_and_place.world` dans `~/ros2_ws/src/br2_gazebo_worlds/worlds`
+
 `cd ~/ros2_ws
 colcon build
 source ~/.bashrc`

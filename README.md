@@ -1,40 +1,39 @@
-# Tiago pick and place for Gazebo Harmonic
+### CE PROJET EN RESUME
+# Fait par Simon LERECLUS et Florian BEAUVAIS
 
-This packge is a MoveItPy demonstrator for Tiago simulated in Tiago Harmonic / ROS Jazzy.
+Le projet à besoin d'une installation ROS Jazzy fonctionelle
 
-## Quickstart
+## INSTALL INSTRUCTIONS
 
-### Tiago Harmonic setup
-```bash
-mkdir -p /home/${USER}/tiago_ws/src
-cd /home/${USER}/tiago_ws/src
-git clone https://github.com/Tiago-Harmonic/tiago_harmonic.git -b ${ROS_DISTRO}
-vcs import . < tiago_harmonic/dependencies.repos
-wget https://raw.githubusercontent.com/ymollard/pal_gripper/6b51bf9fa56864fb03ef06400a580592c31f8794/pal_gripper_description/urdf/gripper.urdf.xacro -O /home/${USER}/tiago_ws/src/pal_gripper/pal_gripper_description/urdf/gripper.urdf.xacro
-```
+créee un nouveau workspace ros2_ws si non existant.
+`cd ros2_ws/src
+git clone git@github.com:SimonLereclus/Project_Robotique_Service.git`
 
-#### Retrieve tiago_pick_and_place
+Le dossier devrais se trouvé à ros2_ws/src/tiago_pick_and_place après le clone
 
-That's a quick workaround to get only the package from the current repo
-```bash
-git clone https://gitlab.com/f2m2robserv/jazzy-ros-ynov /tmp/jazzy-ros-ynov
-cp -r /tmp/jazzy-ros-ynov/src/tiago_pick_and_place//home/${USER}/tiago_ws/src/
-```
+`cd ~/ros2_ws
+colcon build
+source ~/.bashrc`
 
-#### Optional: change the world to get a coke can, trash bin, and ARUco code
-```
-rm -rf /home/${USER}/tiago_ws/src/br2_gazebo_worlds/
-git clone https://github.com/ymollard/br2_gazebo_worlds.git  # Replace br2_gazebo_worlds with customized worlds
-cd /home/${USER}/tiago_ws
-sudo apt update && rosdep update && rosdep install --from-paths src --ignore-src -y -r
-source /opt/ros/"${ROS_DISTRO}"/setup.bash; colcon build --symlink-install
-```
+## LAUNCH INSTRUCTIONS
 
-#### Now run `pick.py`
+# ETAPE 1
 
-```bash
-ros2 launch tiago_gazebo tiago_gazebo.launch.py is_public_sim:=True world_name:=house_pick_and_place  # or select "house" if you haven't cloned the optional custom br2 worlds
-ros2 launch tiago_pick_and_place plan.launch.py use_sim_time:=True
-```
+`ros2 launch tiago_gazebo tiago_gazebo.launch.py is_public_sim:=True world_name:=pick_and_place`
 
-Checkout the code in `pick.py` to uncomment the commands you need.
+# ETAPE 2
+
+`ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/key_vel`
+# Pour pouvoir se déplacé dans l'espace
+
+# ETAPE 3
+
+`ros2 launch tiago_pick_and_place plan2.launch.py use_sim_time:=True`
+
+## REFERENCES ET BIBLIOGRAPHIE
+
+le projet et basé sur les sources suivantes :
+ROS JAZZY : https://gitlab.com/f2m2robserv/jazzy-ros-ynov/
+lenet : https://gitlab.com/f2m2robserv/lenet#lenet-5-in-9-lines-of-code-using-keras
+Générer par chat GPT : fonction `detect_and_draw_square` 
+

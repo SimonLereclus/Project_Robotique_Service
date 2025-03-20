@@ -1,11 +1,12 @@
-### CE PROJET EN RESUME
-# Fait par Simon LERECLUS et Florian BEAUVAIS
+# CE PROJET EN RESUME
+### Fait par Simon LERECLUS et Florian BEAUVAIS
 
 Le projet à besoin d'une installation ROS Jazzy fonctionelle
 
 ## INSTALL INSTRUCTIONS
 
 créee un nouveau workspace ros2_ws si non existant.
+
 `cd ros2_ws/src
 git clone git@github.com:SimonLereclus/Project_Robotique_Service.git`
 
@@ -15,18 +16,18 @@ Le dossier devrais se trouvé à ros2_ws/src/tiago_pick_and_place après le clon
 colcon build
 source ~/.bashrc`
 
-## LAUNCH INSTRUCTIONS
+# LAUNCH INSTRUCTIONS
 
-# ETAPE 1
+## ETAPE 1
 
 `ros2 launch tiago_gazebo tiago_gazebo.launch.py is_public_sim:=True world_name:=pick_and_place`
 
-# ETAPE 2
+## ETAPE 2
 
 `ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/key_vel`
-# Pour pouvoir se déplacé dans l'espace
+### Pour pouvoir se déplacé dans l'espace
 
-# ETAPE 3
+## ETAPE 3
 
 `ros2 launch tiago_pick_and_place plan2.launch.py use_sim_time:=True`
 

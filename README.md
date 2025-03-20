@@ -3,7 +3,7 @@
 
 Le projet à besoin d'une installation ROS Jazzy fonctionelle
 
-## INSTALL INSTRUCTIONS
+# INSTALL INSTRUCTIONS
 
 créee un nouveau workspace ros2_ws si non existant.
 
@@ -31,7 +31,7 @@ source ~/.bashrc`
 
 `ros2 launch tiago_pick_and_place plan2.launch.py use_sim_time:=True`
 
-## REFERENCES ET BIBLIOGRAPHIE
+# REFERENCES ET BIBLIOGRAPHIE
 
 le projet et basé sur les sources suivantes :
 ROS JAZZY : https://gitlab.com/f2m2robserv/jazzy-ros-ynov/

@@ -25,7 +25,7 @@ source ~/.bashrc`
 ## ETAPE 2
 
 `ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/key_vel`
-### Pour pouvoir se déplacé dans l'espace
+### Pour pouvoir se déplacé vers le cube manuscrit
 
 ## ETAPE 3
 
@@ -34,7 +34,10 @@ source ~/.bashrc`
 # REFERENCES ET BIBLIOGRAPHIE
 
 le projet et basé sur les sources suivantes :
+
 ROS JAZZY : https://gitlab.com/f2m2robserv/jazzy-ros-ynov/
+
 lenet : https://gitlab.com/f2m2robserv/lenet#lenet-5-in-9-lines-of-code-using-keras
+
 Générer par chat GPT : fonction `detect_and_draw_square` 
 
